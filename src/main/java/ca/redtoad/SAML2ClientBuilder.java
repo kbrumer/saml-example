@@ -11,11 +11,10 @@ public class SAML2ClientBuilder {
         config.setIdentityProviderMetadataResourceUrl(getClass().getResource("/idp-metadata.xml").toString());
         config.setSpLogoutRequestBindingType(SAMLConstants.SAML2_REDIRECT_BINDING_URI);
 
-        // keytool -genkey -keyalg RSA -alias saml -keypass changeit -keystore trust.keystore -storepass changeit
-        config.setKeystorePath("trust.keystore");
-        config.setKeystorePassword("changeit");
-        config.setPrivateKeyPassword("changeit");
-        config.setKeystoreAlias("saml");
+        config.setKeystorePath("resource:samlKeystore.jks");
+        config.setKeystorePassword("pac4j-demo-passwd");
+        config.setPrivateKeyPassword("pac4j-demo-passwd");
+        config.setKeystoreAlias("pac4j-demo");
 
         SAML2Client saml2Client = new SAML2Client(config);
         saml2Client.setName("SAMLExample");

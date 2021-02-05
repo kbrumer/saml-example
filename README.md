@@ -37,10 +37,4 @@ the user credentials and profile.  Done!
 Using the example
 -----------------
 
-Create a java keystore and create a key pair with alias saml in the current directory.
-
-    keytool -genkey -keyalg RSA -alias saml -keypass changeit -keystore trust.keystore -storepass changeit
-
-Copy the IDP metadata XML document to
-src/main/resources/idp-metadata.xml.  Build, run and browse to
-localhost:8080.
+See [README-keycloak.md](./README-keycloak.md) for using this example with [Keycloak](https://www.keycloak.org/)
